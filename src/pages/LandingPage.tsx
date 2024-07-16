@@ -42,14 +42,16 @@ function LandingPage() {
         <div className="flex flex-col gap-3 justify-center items-center text-center w-1/2 self-center mb-60">
           <MilkyanoOverlay classname="w-full absolute z-0" />
           <MetaBanner classname="w-52 z-10" />
-          <div className="flex flex-col md:scale-125 md:my-2">
+          <div className="flex flex-col md:scale-125 md:my-2 z-10">
             <h1>
               BE THE {""}
               <span className="textGradient">KING</span>
             </h1>
             <h1>OF YOUR NICHE</h1>
           </div>
-          <b>We'll elevate your brand to the top of the chain.</b>
+          <b className="z-10">
+            We'll elevate your brand to the top of the chain.
+          </b>
           <sub>
             We remove campaign uncertainty and stabilize your revenue. As a
             leading Facebook Ads agency, we elevate your brand through expert

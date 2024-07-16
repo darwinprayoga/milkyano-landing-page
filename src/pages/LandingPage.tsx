@@ -24,7 +24,7 @@ function LandingPage() {
           src={gradient}
           alt="blue gradient"
         />
-        <div className="container grid grid-cols-3 m-4 mb-40">
+        <div className="container place-self-center grid grid-cols-3 m-4 mb-40">
           <div />
           <img
             width={80}
@@ -41,7 +41,7 @@ function LandingPage() {
 
         <div className="flex flex-col gap-3 justify-center items-center text-center w-1/2 self-center mb-60">
           <MilkyanoOverlay classname="w-full absolute z-0" />
-          <MetaBanner classname="w-52" />
+          <MetaBanner classname="w-52 z-10" />
           <div className="flex flex-col md:scale-125 md:my-2">
             <h1>
               BE THE {""}

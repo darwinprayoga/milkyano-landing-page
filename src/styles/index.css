@@ -27,6 +27,7 @@
 @layer base {
   body {
     @apply bg-black text-white font-['Inter'] select-none scroll-smooth;
+    font-family: "Inter", sans-serif;
   }
 
   h1 {

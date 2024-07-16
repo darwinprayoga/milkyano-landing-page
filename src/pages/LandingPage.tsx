@@ -24,7 +24,7 @@ function LandingPage() {
           src={gradient}
           alt="blue gradient"
         />
-        <div className="grid grid-cols-3 m-4 mb-40">
+        <div className="container grid grid-cols-3 m-4 mb-40">
           <div />
           <img
             width={80}

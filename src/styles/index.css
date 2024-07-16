@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .pointer {
+    @apply cursor-auto md:cursor-pointer hover:scale-[1.03] active:translate-y-[1px] active:scale-[0.99];
+  }
+
+  .buttonOn {
+    @apply bg-[#007BFF] px-5 py-2 rounded-full;
+  }
+
+  .buttonSemi {
+    @apply bg-[#1373F5]/40 border border-white px-5 py-2 rounded-full;
+  }
+
+  .buttonNegative {
+    @apply bg-white text-[#007BFF] px-5 py-2 rounded-full;
+  }
+
+  .textGradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-[#007BFF] to-[#ACF4FF];
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-['Inter'] select-none scroll-smooth;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl tracking-widest font-extrabold;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl tracking-wide font-semibold;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl tracking-wide font-semibold;
+  }
+
+  h4 {
+    @apply text-lg md:text-xl tracking-wide font-semibold;
+  }
+
+  sub {
+    @apply text-[10px] md:text-xs flex font-extralight leading-normal;
+  }
+
+  li {
+    @apply list-inside text-xs md:text-sm;
+  }
+
+  a {
+    @apply pointer text-xs md:text-sm;
+  }
+
+  p {
+    @apply text-xs md:text-sm;
+  }
+
+  i {
+    @apply text-xs md:text-sm;
+  }
+
+  b {
+    @apply font-bold text-xs md:text-sm tracking-wide;
+  }
+
+  button {
+    @apply pointer flex justify-center items-center gap-2 font-bold;
+  }
+
+  input {
+    @apply focus:outline-0;
+  }
+
+  ::-webkit-scrollbar {
+    @apply hidden;
+  }
+}

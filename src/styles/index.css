@@ -8,15 +8,19 @@
   }
 
   .buttonOn {
-    @apply bg-[#007BFF] px-5 py-2 rounded-full;
+    @apply bg-[#007BFF];
   }
 
   .buttonSemi {
-    @apply bg-[#1373F5]/40 border border-white px-5 py-2 rounded-full;
+    @apply bg-[#1373F5]/40 border border-white;
   }
 
   .buttonNegative {
-    @apply bg-white text-[#007BFF] px-5 py-2 rounded-full;
+    @apply bg-white text-[#007BFF];
+  }
+
+  .buttonIcon {
+    @apply md:w-4 w-2;
   }
 
   .textGradient {
@@ -71,7 +75,7 @@
   }
 
   button {
-    @apply pointer flex justify-center items-center gap-2 font-bold;
+    @apply pointer flex justify-center items-center gap-1 md:gap-2 font-bold text-[8px] md:text-xs px-4 py-1 md:px-5 md:py-2 rounded-full;
   }
 
   input {

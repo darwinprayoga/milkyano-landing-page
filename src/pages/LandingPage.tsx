@@ -14,12 +14,12 @@ import Pointer from "../components/Pointer";
 
 function LandingPage() {
   return (
-    <main className="w-full flex justify-center">
+    <main className="flex justify-center">
       <div className="flex flex-col relative">
         <img
           width={1000}
           height={1000}
-          className="absolute md:-left-56 md:-top-52 -top-20 -right-20 md:right-0"
+          className="absolute md:-left-56 md:-top-52 -top-20 right-0"
           src={gradient}
           alt="blue gradient"
         />

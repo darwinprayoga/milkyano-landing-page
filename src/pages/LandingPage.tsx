@@ -11,11 +11,20 @@ import MilkyanoOverlay from "../components/MilkyanoOverlay";
 import MetaBanner from "../components/MetaBanner";
 import MilkyanoCrown from "../components/MilkyanoCrown";
 import Pointer from "../components/Pointer";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 function LandingPage() {
+  //the saberline scroll effect
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+  });
+  const scaleY = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
   return (
     <main className="flex justify-center">
-      <div className="flex flex-col relative">
+      <div className="flex flex-col relative fade-in">
         <img
           width={1000}
           height={1000}
@@ -23,7 +32,7 @@ function LandingPage() {
           src={gradient}
           alt="blue gradient"
         />
-        <div className="container place-self-center grid grid-cols-3 m-4 mb-40 px-4">
+        <div className="container place-self-center grid grid-cols-3 m-4 mb-32 md:mb-40 px-4">
           <div />
           <img
             width={80}
@@ -38,17 +47,19 @@ function LandingPage() {
           </button>
         </div>
 
-        <div className="flex flex-col gap-3 justify-center items-center text-center md:w-1/2 self-center mb-40 md:mb-60 px-6">
+        <div className="flex flex-col gap-2 justify-center items-center text-center md:w-1/2 self-center mb-20 md:mb-60 px-6">
           <MilkyanoOverlay classname="w-full absolute z-0" />
-          <MetaBanner classname="w-52 z-10" />
-          <div className="flex flex-col md:scale-125 md:my-2 z-10">
+          <MetaBanner classname="w-32 md:w-52 z-10" />
+          <div className="flex flex-col scale-125 my-3 z-10">
             <h1>
               BE THE {""}
               <span className="textGradient">KING</span>
             </h1>
-            <h1>OF YOUR NICHE</h1>
+            <h1 className="hidden md:block">OF YOUR NICHE</h1>
+            <h1 className="md:hidden">OF YOUR</h1>
+            <h1 className="md:hidden">NICHE</h1>
           </div>
-          <b className="z-10">
+          <b className="z-10 mt-3">
             We'll elevate your brand to the top of the chain.
           </b>
           <sub>
@@ -63,50 +74,61 @@ function LandingPage() {
           </button>
         </div>
 
-        <div className="md:w-4/5 text-end place-self-center my-20 relative mb-40 md:mb-60 px-6 w-full">
+        <section ref={ref}>
+          <div className="w-full flex justify-center relative md:hidden mb-20">
+            <div className="h-[200px] w-[1px] bg-[#1373F5]/40 z-0" />
+            <motion.div
+              className="absolute h-[200px] w-[2px] bg-gradient-to-b from-[#1373F5]/40 to-[#1373F5] shadow-[0px_0px_70px_2px_#1373F5] origin-top z-10"
+              style={{ scaleY }}
+            />
+          </div>
+        </section>
+
+        <div className="md:w-4/6 text-center md:text-end place-self-center flex flex-col relative mb-20 md:mb-60 md:mt-20 px-6 w-full gap-8">
           <img
             width={1000}
             height={1000}
             src={astronout3d}
-            className="absolute md:-top-32 bottom-0 -left-10 -z-10"
+            className="md:absolute -left-20 -top-32 bottom-0 -z-10 order-last"
             alt="the Astronout 3d"
           />
 
-          <div className="flex flex-col items-end gap-3 z-10">
-            <MilkyanoCrown classname="w-10 text-[#1374F6]" />
+          <div className="flex flex-col items-center md:items-end gap-[2px] z-10">
+            <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6] mb-[10px]" />
             <b>WE CREATE ADS THAT</b>
             <div className="flex flex-col">
-              <h1>STOP</h1>
-              <h1>THE</h1>
+              <h1 className="block md:hidden">STOP THE</h1>
+              <h1 className="hidden md:block">STOP</h1>
+              <h1 className="hidden md:block">THE</h1>
               <h1 className="textGradient">SCROLL</h1>
             </div>
-            <button className="buttonSemi z-10">
+            <button className="buttonSemi z-10 mt-[23px]">
               FREE CONSULTATION
               <Pointer classname="buttonIcon" />
             </button>
           </div>
         </div>
 
-        <div className="md:w-4/5 place-self-center my-20 relative flex flex-col mb-40 md:mb-60 px-6 gap-24">
-          <img
-            width={350}
-            height={350}
-            src={iphoneMockup}
-            className="md:absolute order-last right-0 -z-10"
-            alt="the Iphone Mockup"
-          />
+        <div className="md:w-4/5 place-self-center my-20 relative flex flex-col mb-20 md:mb-60 px-6 gap-20">
+          <div className="px-16 order-last">
+            <img
+              width={350}
+              height={350}
+              src={iphoneMockup}
+              className="md:absolute right-0 top-0 -z-10"
+              alt="the Iphone Mockup"
+            />
+          </div>
 
-          <div className="flex flex-col items-start gap-3 z-10">
-            <MilkyanoCrown classname="w-10 text-[#1374F6]" />
+          <div className="flex flex-col items-start gap-3 z-10 md:w-1/2">
+            <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6]" />
             <div className="flex flex-col">
               <h1>
-                THE BEST <span className="textGradient">FACEBOOK ADS</span>
+                YES! A FACEBOOK ADS AGENCY IN MELBOURNE WITH{" "}
+                <span className="textGradient">HIGH CONVERTING CREATIVES</span>
               </h1>
-              <h1>AGENCY THAT CREATES</h1>
-              <h1>YOUR CREATIVE IN</h1>
-              <h1>MELBOURNE</h1>
             </div>
-            <div className="flex flex-col gap-3 md:w-1/2">
+            <div className="flex flex-col gap-3 mt-3">
               <b>
                 As a company focused on creating engaging ads with a deep
                 understanding of Facebook’s algorithm and a talented team, we
@@ -132,7 +154,7 @@ function LandingPage() {
 
         <div className="flex justify-center relative bg-gradient-to-b from-black to-[#01126B]/35 px-6">
           <div className="md:w-4/5 flex flex-col items-start gap-3 z-10">
-            <MilkyanoCrown classname="w-10 text-[#1374F6]" />
+            <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6]" />
             <div className="flex flex-col">
               <h1>
                 YOU NEED THE <span className="textGradient">BEST</span>
@@ -146,7 +168,7 @@ function LandingPage() {
               </h1>
               <h1 className="md:block hidden">THIS WORLD</h1>
             </div>
-            <div className="flex flex-col gap-3 md:w-1/2">
+            <div className="flex flex-col gap-3 md:w-1/2 mt-3">
               <b>
                 Finding the winning creative is the hardest part of increasing
                 your ad budget every day on Facebook Ads. Many e-commerce brands
@@ -177,21 +199,22 @@ function LandingPage() {
           </div>
         </div>
 
-        <div className="bg-[#2797FF] flex justify-center py-32 mb-40 px-6">
-          <div className="md:w-4/5 flex flex-col md:flex-row justify-center gap-8 relative">
-            <div className="transform scale-x-[-1] md:scale-x-100 w-36 md:w-60 place-self-end md:place-self-center">
+        <div className="bg-[#2797FF] flex justify-center py-32 mb-10 px-6 h-screen md:h-max">
+          <div className="md:w-4/5 flex flex-col md:flex-row justify-center relative">
+            <div className="transform scale-x-[-1] order-last md:scale-x-100 w-56 md:w-60 place-self-end md:place-self-center">
               <img
                 width={350}
                 height={350}
                 src={milkyanoRobot}
+                className="ml-8"
                 alt="the Astronout 3d"
               />
             </div>
 
             <div className="md:w-1/3 flex flex-col gap-3 z-10">
-              <MilkyanoCrown classname="w-10" />
+              <MilkyanoCrown classname="w-7 md:w-10" />
               <h1>OUR SERVICES</h1>
-              <sub>
+              <sub className="mt-3">
                 Our primary goal is to maximize your ROI by driving conversion
                 sales through expertly crafted Facebook ads. We prioritize clear
                 and consistent communication, keeping you informed about our
@@ -219,19 +242,39 @@ function LandingPage() {
           </div>
         </div>
 
-        <div className="place-self-center text-center my-20 relative mb-40 px-6">
+        <div className="place-self-center text-center my-20 relative mb-40 md:px-6">
           <div className="flex flex-col items-center gap-20 z-10">
             <div className="flex flex-col">
               <h1>OUR</h1>
               <h1 className="textGradient">TESTIMONIALS</h1>
             </div>
-            <img
-              width={2000}
-              height={2000}
-              src={testimonials}
-              className="w-full md:p-10"
-              alt="the Iphone Mockup"
-            />
+            <div className="overflow-x-scroll flex snap-x scroll-px-6 px-6 gap-6">
+              <img
+                src={testimonials}
+                className="h-80 snap-center"
+                alt="the Iphone Mockup"
+              />
+              <img
+                src={testimonials}
+                className="h-80 snap-center"
+                alt="the Iphone Mockup"
+              />
+              <img
+                src={testimonials}
+                className="h-80 snap-center"
+                alt="the Iphone Mockup"
+              />
+              <img
+                src={testimonials}
+                className="h-80 snap-center"
+                alt="the Iphone Mockup"
+              />
+              <img
+                src={testimonials}
+                className="h-80 snap-center"
+                alt="the Iphone Mockup"
+              />
+            </div>
             <button className="buttonSemi z-10">
               GET US
               <Pointer classname="buttonIcon" />
@@ -239,20 +282,30 @@ function LandingPage() {
           </div>
         </div>
 
-        <div className="md:w-4/5 place-self-center text-center md:my-20 relative px-6 flex flex-col items-center gap-20">
+        <div className="md:w-4/5 place-self-center text-center md:my-20 relative md:px-6 flex flex-col items-center gap-20">
           <div className="flex flex-col items-center gap-6 z-10">
-            <MilkyanoCrown classname="w-10 text-[#1374F6]" />
+            <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6]" />
             <div className="flex flex-col">
               <h1>THESE CREATIVES</h1>
               <h1 className="textGradient">WILL BE YOURS</h1>
             </div>
-            <img
-              width={2000}
-              height={2000}
-              src={carousel}
-              className="w-full"
-              alt="the Iphone Mockup"
-            />
+            <div className="overflow-x-scroll md:overflow-hidden flex gap-6 scroll-px-6 px-6 snap-x">
+              <img
+                src={carousel}
+                className="h-[500px] snap-center"
+                alt="the Iphone Mockup"
+              />
+              <img
+                src={carousel}
+                className="h-[500px] snap-center"
+                alt="the Iphone Mockup"
+              />
+              <img
+                src={carousel}
+                className="h-[500px] snap-center"
+                alt="the Iphone Mockup"
+              />
+            </div>
             <button className="buttonSemi z-10">
               GET US
               <Pointer classname="buttonIcon" />
@@ -268,8 +321,12 @@ function LandingPage() {
           />
         </div>
 
-        <div className="bg-gradient-to-r from-[#332FFF]/20 to-[#332FFF]/30 flex justify-center items-center p-10">
-          <img width={600} height={600} src={footer} alt="the Iphone Mockup" />
+        <div className="bg-gradient-to-r from-[#332FFF]/20 to-[#332FFF]/30 flex gap-8 justify-center items-center p-10">
+          <img width={200} height={200} src={footer} alt="Footer logos" />
+          <button className="buttonOn">
+            I AM READY
+            <Pointer classname="buttonIcon" />
+          </button>
         </div>
       </div>
     </main>

@@ -6,13 +6,13 @@ import milkyanoRobot from "../assets/MilkyanoRobot.png";
 import robotHead from "../assets/RobotHead.png";
 import testimonials from "../assets/Testimonials.png";
 import carousel from "../assets/Carousel.png";
-import footer from "../assets/Footer.png";
+import handShake from "../assets/HandShake.png";
 import MilkyanoOverlay from "../components/MilkyanoOverlay";
 import MetaBanner from "../components/MetaBanner";
 import MilkyanoCrown from "../components/MilkyanoCrown";
 import Pointer from "../components/Pointer";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 function LandingPage() {
   //the saberline scroll effect
@@ -21,6 +21,32 @@ function LandingPage() {
     target: ref,
   });
   const scaleY = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
+  //to center
+  const containerRef = useRef(null);
+  function scrollCenter() {
+    const container: any = containerRef.current;
+    const scrollAmount =
+      container.scrollWidth * 0.5 - container.clientWidth / 2;
+
+    container.scrollLeft = scrollAmount;
+  }
+
+  const containerRef2 = useRef(null);
+  function scrollCenter2() {
+    const container: any = containerRef2.current;
+    const scrollAmount =
+      container.scrollWidth * 0.5 - container.clientWidth / 2;
+
+    container.scrollLeft = scrollAmount;
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      scrollCenter();
+      scrollCenter2();
+    }, 1000);
+  }, []);
 
   return (
     <main className="flex justify-center">
@@ -47,7 +73,7 @@ function LandingPage() {
           </button>
         </div>
 
-        <div className="flex flex-col gap-2 justify-center items-center text-center md:w-1/2 self-center mb-20 md:mb-60 px-6">
+        <div className="flex flex-col gap-2 justify-center items-center text-center md:px-[438px] self-center mb-20 md:mb-60 px-6">
           <MilkyanoOverlay classname="w-full absolute z-0" />
           <MetaBanner classname="w-32 md:w-52 z-10" />
           <div className="flex flex-col scale-125 my-3 z-10">
@@ -68,7 +94,7 @@ function LandingPage() {
             creative testing and media buying. Simplify your advertising journey
             with Milkyano for clear results and steady growth.
           </sub>
-          <button className="buttonSemi z-10">
+          <button className="buttonSemi z-10 mt-5">
             START NOW
             <Pointer classname="buttonIcon" />
           </button>
@@ -84,12 +110,12 @@ function LandingPage() {
           </div>
         </section>
 
-        <div className="md:w-4/6 text-center md:text-end place-self-center flex flex-col relative mb-20 md:mb-60 md:mt-20 px-6 w-full gap-8">
+        <div className="md:px-[438px] text-center md:text-end place-self-center flex flex-col relative mb-20 md:mb-60 md:mt-20 px-6 w-full gap-8">
           <img
             width={1000}
             height={1000}
             src={astronout3d}
-            className="md:absolute -left-20 -top-32 bottom-0 -z-10 order-last"
+            className="md:absolute left-52 -bottom-32 -z-10 order-last"
             alt="the Astronout 3d"
           />
 
@@ -109,13 +135,13 @@ function LandingPage() {
           </div>
         </div>
 
-        <div className="md:w-4/5 place-self-center my-20 relative flex flex-col mb-20 md:mb-60 px-6 gap-20">
-          <div className="px-16 order-last">
+        <div className="md:px-[438px] place-self-center my-20 flex flex-col md:flex-row justify-between items-center mb-20 md:mb-60 px-6 gap-20 md:gap-0">
+          <div className="px-16 md:pr-0 order-last relative">
             <img
-              width={350}
-              height={350}
+              width={500}
+              height={500}
               src={iphoneMockup}
-              className="md:absolute right-0 top-0 -z-10"
+              className="-z-10 w-full"
               alt="the Iphone Mockup"
             />
           </div>
@@ -153,7 +179,7 @@ function LandingPage() {
         </div>
 
         <div className="flex justify-center relative bg-gradient-to-b from-black to-[#01126B]/35 px-6">
-          <div className="md:w-4/5 flex flex-col items-start gap-3 z-10">
+          <div className="md:px-[438px] flex flex-col items-start gap-3 z-10">
             <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6]" />
             <div className="flex flex-col">
               <h1>
@@ -200,7 +226,7 @@ function LandingPage() {
         </div>
 
         <div className="bg-[#2797FF] flex justify-center py-32 mb-10 px-6 h-screen md:h-max">
-          <div className="md:w-4/5 flex flex-col md:flex-row justify-center relative">
+          <div className="md:px-[438px] flex flex-col md:flex-row justify-between relative">
             <div className="transform scale-x-[-1] order-last md:scale-x-100 w-56 md:w-60 place-self-end md:place-self-center">
               <img
                 width={350}
@@ -211,7 +237,7 @@ function LandingPage() {
               />
             </div>
 
-            <div className="md:w-1/3 flex flex-col gap-3 z-10">
+            <div className="md:w-1/2 flex flex-col gap-3 z-10">
               <MilkyanoCrown classname="w-7 md:w-10" />
               <h1>OUR SERVICES</h1>
               <sub className="mt-3">
@@ -248,31 +274,34 @@ function LandingPage() {
               <h1>OUR</h1>
               <h1 className="textGradient">TESTIMONIALS</h1>
             </div>
-            <div className="overflow-x-scroll flex snap-x scroll-px-6 px-6 gap-6">
+            <div
+              ref={containerRef}
+              className="overflow-x-scroll flex snap-x scroll-px-6 px-6 gap-6"
+            >
               <img
                 src={testimonials}
                 className="h-80 snap-center"
-                alt="the Iphone Mockup"
+                alt="the testimonial"
               />
               <img
                 src={testimonials}
                 className="h-80 snap-center"
-                alt="the Iphone Mockup"
+                alt="the testimonial"
               />
               <img
                 src={testimonials}
                 className="h-80 snap-center"
-                alt="the Iphone Mockup"
+                alt="the testimonial"
               />
               <img
                 src={testimonials}
                 className="h-80 snap-center"
-                alt="the Iphone Mockup"
+                alt="the testimonial"
               />
               <img
                 src={testimonials}
                 className="h-80 snap-center"
-                alt="the Iphone Mockup"
+                alt="the testimonial"
               />
             </div>
             <button className="buttonSemi z-10">
@@ -282,28 +311,31 @@ function LandingPage() {
           </div>
         </div>
 
-        <div className="md:w-4/5 place-self-center text-center md:my-20 relative md:px-6 flex flex-col items-center gap-20">
+        <div className="place-self-center text-center md:my-20 relative flex flex-col items-center gap-20">
           <div className="flex flex-col items-center gap-6 z-10">
             <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6]" />
             <div className="flex flex-col">
               <h1>THESE CREATIVES</h1>
               <h1 className="textGradient">WILL BE YOURS</h1>
             </div>
-            <div className="overflow-x-scroll md:overflow-hidden flex gap-6 scroll-px-6 px-6 snap-x">
+            <div
+              ref={containerRef2}
+              className="overflow-x-scroll md:overflow-hidden flex gap-6 scroll-px-6 px-6 snap-x"
+            >
               <img
                 src={carousel}
                 className="h-[500px] snap-center"
-                alt="the Iphone Mockup"
+                alt="the carousel"
               />
               <img
                 src={carousel}
                 className="h-[500px] snap-center"
-                alt="the Iphone Mockup"
+                alt="the carousel"
               />
               <img
                 src={carousel}
                 className="h-[500px] snap-center"
-                alt="the Iphone Mockup"
+                alt="the carousel"
               />
             </div>
             <button className="buttonSemi z-10">
@@ -322,7 +354,14 @@ function LandingPage() {
         </div>
 
         <div className="bg-gradient-to-r from-[#332FFF]/20 to-[#332FFF]/30 flex gap-8 justify-center items-center p-10">
-          <img width={200} height={200} src={footer} alt="Footer logos" />
+          <img
+            className="w-52 md:w-96"
+            width={400}
+            height={400}
+            src={handShake}
+            draggable={false}
+            alt="Footer logos"
+          />
           <button className="buttonOn">
             I AM READY
             <Pointer classname="buttonIcon" />

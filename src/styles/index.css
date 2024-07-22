@@ -12,7 +12,7 @@
   }
 
   .buttonSemi {
-    @apply bg-[#1373F5]/40 border border-white;
+    @apply bg-[#0E315D] border border-white;
   }
 
   .buttonNegative {
@@ -75,7 +75,7 @@
   }
 
   button {
-    @apply pointer flex justify-center items-center gap-1 md:gap-2 font-bold text-[8px] md:text-xs px-[14px] py-[12px] md:px-[16px] md:py-[14px] rounded-full;
+    @apply pointer hover:shadow-lg hover:shadow-[#007BFF]/50 flex justify-center items-center gap-1 md:gap-2 font-bold text-[8px] md:text-xs px-[14px] py-[12px] md:px-[16px] md:py-[14px] rounded-full;
   }
 
   input {

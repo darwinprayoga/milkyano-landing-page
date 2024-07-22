@@ -1,7 +1,7 @@
 import gradient from "../assets/Gradient.png";
 import astronout3d from "../assets/Astronout3d.png";
 import threeAstronout3d from "../assets/ThreeAstronout3d.png";
-import iphoneMockup from "../assets/IphoneMockup.png";
+import robot from "../assets/Robot.png";
 import milkyanoRobot from "../assets/MilkyanoRobot.png";
 import robotHead from "../assets/RobotHead.png";
 import testimonials from "../assets/Testimonials.png";
@@ -140,7 +140,7 @@ function LandingPage() {
             <img
               width={500}
               height={500}
-              src={iphoneMockup}
+              src={robot}
               className="-z-10 w-full"
               alt="the Iphone Mockup"
             />

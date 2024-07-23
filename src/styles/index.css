@@ -16,7 +16,7 @@
   }
 
   .buttonNegative {
-    @apply bg-white text-black;
+    @apply bg-white text-black hover:shadow-white;
   }
 
   .buttonIcon {

@@ -16,7 +16,7 @@
   }
 
   .buttonNegative {
-    @apply bg-white text-[#007BFF];
+    @apply bg-white text-black;
   }
 
   .buttonIcon {

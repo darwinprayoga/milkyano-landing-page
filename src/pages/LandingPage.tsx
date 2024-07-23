@@ -58,15 +58,15 @@ function LandingPage() {
           src={gradient}
           alt="blue gradient"
         />
-        <div className="container place-self-center flex justify-between m-4 mb-32 md:mb-40 px-4">
+        <div className="container place-self-center flex justify-between items-center m-6 mb-32 md:mb-40 px-4">
           <img
-            width={150}
-            height={150}
-            className="place-self-center place-items-center h-full"
+            width={130}
+            height={130}
+            className="h-full"
             src="/MilkyanoHeader.png"
             alt="Milkyano Header"
           />
-          <button className="buttonOn place-self-end">
+          <button className="buttonOn">
             BOOK CALL
             <Pointer classname="buttonIcon" />
           </button>
@@ -134,7 +134,7 @@ function LandingPage() {
           </div>
         </div>
 
-        <div className="md:px-[438px] place-self-center flex flex-col md:flex-row items-center gap-20 md:gap-0 mb-20 md:mb-60">
+        <div className="md:px-[438px] place-self-center flex flex-col md:flex-row items-center gap-20 md:gap-0 mb-20 md:mb-60 px-6">
           <div className="px-16 md:pr-0 order-last relative">
             <div className="border border-[#007BFF] rounded-xl flex flex-col">
               <img

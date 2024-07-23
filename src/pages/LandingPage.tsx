@@ -58,12 +58,11 @@ function LandingPage() {
           src={gradient}
           alt="blue gradient"
         />
-        <div className="container place-self-center grid grid-cols-3 m-4 mb-32 md:mb-40 px-4">
-          <div />
+        <div className="container place-self-center flex justify-between m-4 mb-32 md:mb-40 px-4">
           <img
-            width={80}
-            height={80}
-            className="place-self-center place-items-center"
+            width={150}
+            height={150}
+            className="place-self-center place-items-center h-full"
             src="/MilkyanoHeader.png"
             alt="Milkyano Header"
           />
@@ -73,7 +72,7 @@ function LandingPage() {
           </button>
         </div>
 
-        <div className="flex flex-col gap-2 justify-center items-center text-center md:px-[438px] self-center mb-20 md:mb-60 px-6">
+        <div className="flex flex-col gap-2 justify-center items-center text-center md:px-[438px] self-center mb-20 md:mb-80 px-6">
           <MilkyanoOverlay classname="w-full absolute z-0" />
           <MetaBanner classname="w-32 md:w-52 z-10" />
           <div className="flex flex-col scale-125 my-3 z-10">
@@ -94,7 +93,7 @@ function LandingPage() {
             creative testing and media buying. Simplify your advertising journey
             with Milkyano for clear results and steady growth.
           </sub>
-          <button className="buttonSemi z-10 mt-5">
+          <button className="buttonOn z-10 mt-5">
             START NOW
             <Pointer classname="buttonIcon" />
           </button>
@@ -128,66 +127,67 @@ function LandingPage() {
               <h1 className="hidden md:block">THE</h1>
               <h1 className="textGradient">SCROLL</h1>
             </div>
-            <button className="buttonSemi z-10 mt-[23px]">
+            <button className="buttonOn z-10 mt-[23px]">
               FREE CONSULTATION
               <Pointer classname="buttonIcon" />
             </button>
           </div>
         </div>
 
-        <div className="md:px-[438px] place-self-center my-20 flex flex-col md:flex-row items-center mb-20 md:mb-60 px-6 gap-20 md:gap-0">
-          <div className="px-16 md:pr-0 order-last relative">
-            <div className="border border-[#007BFF] rounded-xl flex flex-col">
-              <img
-                width={500}
-                height={500}
-                src={robot}
-                className="-z-10"
-                alt="the Iphone Mockup"
-              />
-              <div className="flex justify-center items-center gap-6 my-10">
-                <p className="pointer">Yes, Please</p>
-                <button className="buttonNegative">
-                  GET ME THERE
-                  <Pointer classname="buttonIcon" />
-                </button>
+        <div className="flex flex-col justify-center relative bg-gradient-to-b from-[#070707] to-[#01126B]/80 px-6 gap-20 md:gap-60">
+          <div className="md:px-[438px] place-self-center flex flex-col md:flex-row items-center gap-20 md:gap-0">
+            <div className="px-16 md:pr-0 order-last relative">
+              <div className="border border-[#007BFF] rounded-xl flex flex-col">
+                <img
+                  width={500}
+                  height={500}
+                  src={robot}
+                  alt="the Iphone Mockup"
+                />
+                <div className="flex justify-center items-center gap-6 my-10">
+                  <p className="pointer">Yes, Please</p>
+                  <button className="buttonNegative">
+                    GET ME THERE
+                    <Pointer classname="buttonIcon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-start gap-3 z-10 md:w-4/5">
+              <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6]" />
+              <div className="flex flex-col">
+                <h1>
+                  YES! A FACEBOOK ADS AGENCY IN MELBOURNE WITH{" "}
+                  <span className="textGradient">
+                    HIGH CONVERTING CREATIVES
+                  </span>
+                </h1>
+              </div>
+              <div className="flex flex-col gap-3 mt-3">
+                <b>
+                  As a company focused on creating engaging ads with a deep
+                  understanding of Facebook’s algorithm and a talented team, we
+                  strive to produce impactful ideas.
+                </b>
+                <sub>
+                  We pave the way for companies to grow through the internet by
+                  giving your products the views and attention they need. Your
+                  products deserve ample recognition, and as an advertising
+                  agency, recognition is our specialty. Sit back and relax as we
+                  take your company to the market and put your products where
+                  they need to be.
+                </sub>
+                <sub>
+                  Don’t worry about not performing well on Facebook ads. Our
+                  competency surpasses that of most agencies in paid ads and
+                  creative. Our best strategies and creatives will conquer the
+                  market for your brand.
+                </sub>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col items-start gap-3 z-10 md:w-4/5">
-            <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6]" />
-            <div className="flex flex-col">
-              <h1>
-                YES! A FACEBOOK ADS AGENCY IN MELBOURNE WITH{" "}
-                <span className="textGradient">HIGH CONVERTING CREATIVES</span>
-              </h1>
-            </div>
-            <div className="flex flex-col gap-3 mt-3">
-              <b>
-                As a company focused on creating engaging ads with a deep
-                understanding of Facebook’s algorithm and a talented team, we
-                strive to produce impactful ideas.
-              </b>
-              <sub>
-                We pave the way for companies to grow through the internet by
-                giving your products the views and attention they need. Your
-                products deserve ample recognition, and as an advertising
-                agency, recognition is our specialty. Sit back and relax as we
-                take your company to the market and put your products where they
-                need to be.
-              </sub>
-              <sub>
-                Don’t worry about not performing well on Facebook ads. Our
-                competency surpasses that of most agencies in paid ads and
-                creative. Our best strategies and creatives will conquer the
-                market for your brand.
-              </sub>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col justify-center relative bg-gradient-to-b from-black to-[#01126B]/80 px-6 gap-20 md:gap-60">
           <div className="md:px-[438px] flex flex-col md:flex-row justify-between relative">
             <div className="transform scale-x-[-1] order-last md:order-first md:scale-x-100 w-56 md:w-80 place-self-end md:place-self-center">
               <img

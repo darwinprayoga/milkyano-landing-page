@@ -166,12 +166,13 @@ function LandingPage() {
         </div>
 
         <div className="md:px-[438px] place-self-center flex flex-col md:flex-row items-center gap-20 md:gap-0 mb-20 md:mb-60 px-6">
-          <div className="px-16 md:pr-0 order-last relative">
-            <div className="border border-[#007BFF] rounded-xl flex flex-col">
+          <div className="px-10 md:pr-0 order-last relative">
+            <div className="border border-[#007BFF] rounded-2xl flex flex-col">
               <img
                 width={500}
                 height={500}
                 src={robot}
+                className="rounded-2xl"
                 alt="the Iphone Mockup"
               />
               <div className="flex justify-center items-center gap-6 my-10">
@@ -251,7 +252,7 @@ function LandingPage() {
                 market. Our expertise guarantees increased sales, higher ROI,
                 and improved ROAS.
               </sub>
-              <button className="buttonNegative w-max">
+              <button className="buttonNegative w-max mt-3">
                 GET US
                 <Pointer classname="w-4" />
               </button>
@@ -289,7 +290,7 @@ function LandingPage() {
                 their next creations.
               </sub>
             </div>
-            <button className="buttonNegative z-10">
+            <button className="buttonNegative z-10 mt-3">
               GET US
               <Pointer classname="buttonIcon" />
             </button>

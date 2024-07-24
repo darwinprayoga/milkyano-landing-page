@@ -4,7 +4,7 @@
 
 @layer components {
   .pointer {
-    @apply cursor-auto md:cursor-pointer hover:scale-[1.03] active:translate-y-[1px] active:scale-[0.99];
+    @apply cursor-auto md:cursor-pointer transition duration-300 hover:scale-[1.03] active:translate-y-[1px] active:scale-[0.99];
   }
 
   .buttonOn {
@@ -16,7 +16,7 @@
   }
 
   .buttonNegative {
-    @apply bg-white text-black hover:shadow-white;
+    @apply bg-white text-black hover:shadow-white/30;
   }
 
   .buttonIcon {

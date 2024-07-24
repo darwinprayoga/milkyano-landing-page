@@ -48,6 +48,37 @@ function LandingPage() {
     }, 1000);
   }, []);
 
+  //infinite scrolling
+  useEffect(() => {
+    const container: any = containerRef2.current;
+
+    const handleScroll = () => {
+      if (container.scrollLeft >= container.scrollWidth / 2) {
+        container.scrollLeft = 0;
+      }
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const container: any = containerRef.current;
+
+    const handleScroll = () => {
+      if (container.scrollLeft >= container.scrollWidth / 2) {
+        container.scrollLeft = 0;
+      }
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <main className="flex justify-center">
       <div className="flex flex-col relative fade-in">
@@ -114,7 +145,7 @@ function LandingPage() {
             width={1000}
             height={1000}
             src={astronout3d}
-            className="md:absolute left-52 -bottom-32 -z-10 order-last ml-3"
+            className="md:absolute left-52 -bottom-20 -z-10 order-last ml-3"
             alt="the Astronout 3d"
           />
 

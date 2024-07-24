@@ -4,7 +4,7 @@ import threeAstronout3d from "../assets/ThreeAstronout3d.png";
 import robot from "../assets/Robot.png";
 import milkyanoRobot from "../assets/MilkyanoRobot.png";
 import robotHead from "../assets/RobotHead.png";
-import testimonials from "../assets/Testimonials.png";
+import differenceTable from "../assets/DifferenceTable.png";
 import carousel from "../assets/Carousel.png";
 import handShake from "../assets/HandShake.png";
 import MilkyanoOverlay from "../components/MilkyanoOverlay";
@@ -93,7 +93,6 @@ function LandingPage() {
           <img
             width={130}
             height={130}
-            className="h-full"
             src="/MilkyanoHeader.png"
             alt="Milkyano Header"
           />
@@ -150,7 +149,7 @@ function LandingPage() {
           />
 
           <div className="flex flex-col items-center md:items-end gap-[2px] z-10">
-            <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6] mb-[10px]" />
+            <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6] mb-5" />
             <b>WE CREATE ADS THAT</b>
             <div className="flex flex-col">
               <h1 className="block md:hidden">STOP THE</h1>
@@ -186,11 +185,11 @@ function LandingPage() {
           </div>
 
           <div className="flex flex-col items-start gap-3 z-10 md:w-4/5">
-            <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6]" />
+            <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6] mb-5" />
             <div className="flex flex-col">
               <h1>
-                YES! A FACEBOOK ADS AGENCY IN MELBOURNE WITH{" "}
-                <span className="textGradient">HIGH CONVERTING CREATIVES</span>
+                Yes! A Facebook Ads Agency In Melbourne With{" "}
+                <span className="textGradient">High Converting Creatives</span>
               </h1>
             </div>
             <div className="flex flex-col gap-3 mt-3">
@@ -230,8 +229,10 @@ function LandingPage() {
             </div>
 
             <div className="md:w-1/2 flex flex-col gap-3 z-10">
-              <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6]" />
-              <h1>OUR SERVICES</h1>
+              <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6] mb-5" />
+              <h1>
+                Our <span className="textGradient">Services</span>
+              </h1>
               <sub className="mt-3">
                 Our primary goal is to maximize your ROI by driving conversion
                 sales through expertly crafted Facebook ads. We prioritize clear
@@ -260,19 +261,19 @@ function LandingPage() {
           </div>
 
           <div className="md:px-[438px] flex flex-col items-start gap-3 z-10 mb-32 md:mb-96">
-            <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6]" />
+            <MilkyanoCrown classname="w-7 md:w-10 text-[#1374F6] mb-5" />
             <div className="flex flex-col">
               <h1>
-                YOU NEED THE <span className="textGradient">BEST</span>
+                You Need The <span className="textGradient">Best</span>
               </h1>
               <h1 className="md:hidden block">
-                <span className="textGradient">TEAM</span> TO SUCCEED IN THIS
-                WORLD
+                <span className="textGradient">Team</span> To Succeed In This
+                World
               </h1>
               <h1 className="md:block hidden">
-                <span className="textGradient">TEAM</span> TO SUCCEED
+                <span className="textGradient">Team</span> To Succeed
               </h1>
-              <h1 className="md:block hidden">THIS WORLD</h1>
+              <h1 className="md:block hidden">This World</h1>
             </div>
             <div className="flex flex-col gap-3 md:w-1/2 mt-3">
               <b>
@@ -305,39 +306,13 @@ function LandingPage() {
         </div>
 
         <div className="place-self-center text-center my-20 relative mb-40 md:px-6">
-          <div className="flex flex-col items-center gap-20 z-10">
-            <div className="flex flex-col">
-              <h1>OUR</h1>
-              <h1 className="textGradient">TESTIMONIALS</h1>
-            </div>
-            <div
-              ref={containerRef}
-              className="overflow-x-scroll flex snap-x scroll-px-6 px-6 gap-6"
-            >
+          <div className="flex flex-col items-center gap-20 z-10 md:px-20">
+            <h1 className="textGradient">Milkyano Competitive Difference</h1>
+            <div ref={containerRef} className="flex px-6">
               <img
-                src={testimonials}
-                className="h-80 snap-center"
-                alt="the testimonial"
-              />
-              <img
-                src={testimonials}
-                className="h-80 snap-center"
-                alt="the testimonial"
-              />
-              <img
-                src={testimonials}
-                className="h-80 snap-center"
-                alt="the testimonial"
-              />
-              <img
-                src={testimonials}
-                className="h-80 snap-center"
-                alt="the testimonial"
-              />
-              <img
-                src={testimonials}
-                className="h-80 snap-center"
-                alt="the testimonial"
+                draggable={false}
+                src={differenceTable}
+                alt="the Difference Table"
               />
             </div>
             <button className="buttonOn z-10">

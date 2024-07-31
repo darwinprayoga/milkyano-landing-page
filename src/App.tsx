@@ -1,7 +1,5 @@
-import AppRoutes from "./routes";
-
 function App() {
-  return <AppRoutes />;
+  return <p>unlisted page</p>;
 }
 
 export default App;
